@@ -2,4 +2,5 @@ rootProject.name = 'programming in java'
 include 'agh.ii.prinjava.lab00.lst00_01'
 include 'lab00'
 include 'lab 00'
-
+include 'lab01'
+include 'lab02'
