@@ -6,9 +6,11 @@ public class LinkedListBasedImpl implements StackOfInts {
 
     @Override
     public int pop() {
+
         if (numOfElems != 0){
             int boudiou = node.elem;
             node = node.next;
+            numOfElems-=1;
             return boudiou;
         }
         throw new IllegalStateException("iz ampti lol");
@@ -21,7 +23,11 @@ public class LinkedListBasedImpl implements StackOfInts {
             naudeh.next = node;
             node = naudeh;
         }
-        throw new IllegalStateException("iz ampti lol");
+        else{
+            Node ThomasUwU = new Node(x);
+            node = ThomasUwU;
+        }
+        numOfElems++;
     }
 
     @Override
