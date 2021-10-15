@@ -24,7 +24,7 @@ public class ArrayBasedImpl implements StackOfInts {
         int[] danielCWorded = new int[0];
         danielCWorded[0] = x;
         for (int i = 0; i<numOfElems; i++){
-            danielCWorded[i+1] = boudiou[i];                   CRINGE
+            danielCWorded[i+1] = boudiou[i];
         }
         boudiou = danielCWorded;
     }

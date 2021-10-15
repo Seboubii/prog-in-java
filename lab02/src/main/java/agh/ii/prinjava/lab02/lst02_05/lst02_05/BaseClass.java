@@ -124,5 +124,3 @@ class BaseClass {
         System.out.println("BaseClass.m1()");
     }
 }
-
-    }

@@ -26,7 +26,7 @@ enum ThreeColors {
     WHITE(new Actor("Zbigniew", "Zamachowski")),
     RED(new Actor("Irene", "Jacob"));
 
-    private Actor leadingActor;
+    private final Actor leadingActor;
 
     /**
      * The constructor of an enumeration is always private (you can omit the private modifier),
@@ -111,3 +111,4 @@ public class Main {
             System.out.println(movieDesc(cl.name(), acteurPrincipal(cl)));
         }
     }
+}
