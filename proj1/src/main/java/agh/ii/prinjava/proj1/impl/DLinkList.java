@@ -15,7 +15,10 @@ public class DLinkList<E> {
      * @return boolean
      */
      public boolean isEmpty(){
-        return first.elem == null;
+        if (first == null){
+            return true;
+        }
+        return false;
      }
 
     /**
@@ -23,11 +26,12 @@ public class DLinkList<E> {
      * @param elem
      */
     public void addFirst(E elem){
-         if (isEmpty()) {
-             first.elem = elem;
+        Node<E> newElem = new Node<E>();
+        if (isEmpty()) {
+             newElem.elem = elem;
+             first = newElem;
          }
          else{
-             Node<E> newElem = new Node<E>();
              newElem.elem = elem;
              newElem.next = first;
              first.prev = newElem;
@@ -40,15 +44,16 @@ public class DLinkList<E> {
      * @param elem
      */
      public void addLast(E elem){
-        if (isEmpty()){
-            first.elem = elem;
+         Node<E> newElem = new Node<E>();
+         if (isEmpty()){
+            newElem.elem = elem;
+            first = newElem;
         }
         else{
             Node<E> temp = first;
             while (temp.next != null){
                 temp = temp.next;
             }
-            Node<E> newElem = new Node<E>();
             newElem.elem = elem;
             newElem.prev = temp;
             temp.next = newElem;
@@ -105,7 +110,7 @@ public class DLinkList<E> {
      * @return int
      */
     int numOfElems(){
-        if(first.elem == null){
+        if(first.elem == null || first == null){
             return 0;
         }
         else{
@@ -121,9 +126,16 @@ public class DLinkList<E> {
 
     @Override
     public String toString() {
-        return "DLinkList{" +
-                "first=" + first +
-                '}';
+        Node<E> temp = first;
+        if (temp!=null) {
+            String tostring = "DLinkList{ ";
+            while (temp.next != null) {
+                tostring += temp.elem + " / ";
+                temp = temp.next;
+            }
+            return tostring + " }";
+        }
+        throw new IllegalStateException("empty");
     }
 
     /**
