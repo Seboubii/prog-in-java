@@ -110,7 +110,7 @@ public class DLinkList<E> {
      * @return int
      */
     int numOfElems(){
-        if(first.elem == null || first == null){
+        if(first == null){
             return 0;
         }
         else{
